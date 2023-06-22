@@ -1,26 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.css">
-	<title>Temperature Conversion</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Ampun&reg Suhu - Alat Konversi Suhu Online Gratis</title>
 </head>
 <body>
-	<header>
-		<h1>Temperature Conversion</h1>
-	</header>
-
-	<section class="InputSection">
-		<label for="InputField">Celcius</label>
-		<input type="number" name="" id="InputField">
-		<div class="InputButton">
-			<button>Conversion</button>
-			<button>Reset</button>
-			<button>Reverse</button>
-		</div>
-	</section>
-
+  <header>
+    <section class="site-header">
+      <div id="site-title">
+        <h1>Ampun<sup>&reg</sup> Suhu</h1>
+        <p class="slogan">Alat Konversi Suhu Online Gratis</p>
+      </div>
+    </section>
+    <section class="callout" data-closable>
+      <button class="close-button" aria-label="Close alert" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="inner">
+        <div class="calloutDesc">
+          <h2>Getting Started</h2>
+          <p>Untuk memulai Silakan masukkan suhu dalam Celsius atau Fahrenheit, kemudian klik tombol "Konversi" untuk melakukan konversi. Anda juga dapat menukar posisi suhu dengan menggunakan tombol "Reverse" dan mengosongkan semua input dengan tombol "Reset".</p>
+        </div>
+        <div class="calloutInfo">
+          <h2>Perhatian</h2>
+          <p>Kondisi berikut menyebabkan muncul pesan error jika:</p>
+          <ul>
+            <li>Formulir input kosong</li>
+            <li>Formulir input terdapat huruf</li>
+            <li>Formulir input tidak valid</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </header>
+  <div class="container">
+    <main>
+      <section id="inputSection">
+        <h2>Aplikasi Konversi Suhu</h2>
+        <div class="input-group celsius">
+          <label for="inputField">Celsius (°C)</label>
+          <input type="number" id="inputField" class="inputFieldBg" required>
+          <span id="alertText" class="text-info">Harap masukan angka suhu</span>
+        </div>
+        <div class="input-group fahrenheit">
+          <label for="outputField">Fahrenheit (°F)</label>
+          <input type="number" id="outputField" class="inputFieldBg" required>
+        </div>
+        <div class="button-group">
+          <button id="convertButton">Konversi</button>
+          <button id="reverseButton">Reverse</button>
+          <button id="resetButton">Reset</button>
+        </div>
+      </section>
+    </main>
+    <aside id="infoSection">
+      <section id="formulaSection">
+        <h2>Formula Kalkulasi</h2>
+        <textarea id="formulaOutput" readonly></textarea>
+      </section>
+      <section id="explainSection">
+        <h2>Penjelasan Konversi</h2>
+        <p id="explainDescription">
+          Penjelasan konversi akan muncul setelah konversi dilakukan dan menyesuaikan suhu yang digunakan.
+        </p>
+      </section>
+    </aside>
+  </div>
+  <footer>
+    <div class="inner">
+    <p>&copy; 2023 Ampun<sup><small>&reg</small></sup> Suhu. All rights reserved.</p>
+    <p>Thanks to Revou and the dedicated team for making this app a reality</p>
+    </div>
+  </footer>
+  <script src="scripts.js"></script>
 </body>
 </html>
