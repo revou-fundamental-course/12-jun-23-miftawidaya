@@ -1,67 +1,322 @@
-/* MARK: Default */
-body{
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	color:rgb(17, 24, 39);
-}
-
-header{
-	margin: 20px 100px;
-	padding: 16px;
-	text-align: center;
-	color: #ffffffdf;
-	border-radius: 8px;
-	background-color: #4C3F91;
-}
-label{
-	margin-bottom: 4px;
-	font-size: 18px;
+/* General and Layouts */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+  }
+  
+  p {
+	line-height: 24px;
+  }
+  
+  ul {
+	padding-left: 16px;
+	line-height: 24px;
+  }
+  
+  .container,
+  .inner {
+	display: flex;
+	justify-content: center;
+	max-width: 960px; /* Menentukan batasan lebar konten */
+	margin-left: auto; /* Perataan tengah pada tampilan desktop */
+	margin-right: auto; /* Perataan tengah pada tampilan desktop */
+  }
+  
+  .container {
+	margin: 60px auto;
+  }
+  
+  .site-header,
+  .callout {
+	max-width: 960px; /* Menentukan batasan lebar konten */
+	margin-left: auto; /* Perataan tengah pada tampilan desktop */
+	margin-right: auto; /* Perataan tengah pada tampilan desktop */
+	box-sizing: border-box; /* Menyertakan padding dalam perhitungan lebar */
+  }
+  
+  /* header */
+  
+  header {
+	background-color: #f8f8f8;
+	padding: 20px;
+	text-align: left;
+  }
+  
+  #site-title {
+	display: flex;
+	align-items: center;
+	margin-left: 12px;
+  }
+  
+  #site-title h1 {
+	margin: 0;
+	font-size: 36px;
 	font-weight: bold;
-}
-input,button{
-	background-color: #fff;
-    border-color: #6b7280;
-	outline: none;
-}
-input{
-	border-radius: 4px;
-	padding: 10px;
-}
-input:focus{
-	border: solid rgb(79, 70, 229);
-}
-
-button{
-	margin: 10px 4px;
-	padding: 10px 20px;
-	cursor: pointer;
-	background: rgb(79, 70, 229);
-	color: white;
-	border-radius: 4px;
-	border: none;
-}
-button:hover{
-	background: rgb(99, 102, 241);
-}
-button:active{
-	transform: translateY(2px);
-	background: rgb(52, 54, 173);
-}
-
-/* MARK: ID */
-
-#InputField {
+	letter-spacing: -1px;
+	color: #333;
+  }
+  
+  header sup {
+	font-size: 14px !important;
+  }
+  
+  .slogan {
+	margin: 5px 16px 0;
+	color: #666;
 	font-size: 18px;
-}
-
-/* MARK: Class */
-
-.InputSection{
-	display: flex;
-	flex-direction: column;
-}
-
-.InputButton{
-	display: flex;
-	flex-direction: row;
-	align-self: center;
-}
+  }
+  
+  .callout {
+	/* display: none; */
+	position: relative;
+	background-color: #f6bf42;
+	padding: 20px;
+	margin: 24px auto 20px;
+	text-align: center;
+	color: #333;
+	border-radius: 12px;
+	animation: entrance 0.5s ease-in-out;
+  }
+  
+  .callout .close-button {
+	position: absolute;
+	top: 5px; /* Perbesar jarak dari atas */
+	right: 10px; /* Perbesar jarak dari kanan */
+	background: none;
+	border: none;
+	color: #333;
+	cursor: pointer;
+	font-size: 36px; /* Perbesar ukuran font tombol close*/
+  }
+  
+  .callout .calloutDesc,
+  .callout .calloutInfo {
+	width: 50%;
+	padding: 24px;
+	text-align: left;
+  }
+  
+  .callout .calloutDesc {
+	margin-right: 30px;
+  }
+  
+  /* main */
+  
+  main {
+	flex: 1;
+	margin-right: 20px;
+  }
+  
+  #inputSection {
+	background-color: #fff;
+	padding: 36px;
+  }
+  
+  #inputSection h2 {
+	margin-top: 0;
+	font-size: 24px;
+	color: #333;
+  }
+  
+  .input-group {
+	margin-bottom: 15px;
+  }
+  
+  .input-group label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #333;
+  }
+  
+  .input-group input {
+	width: 100%;
+	padding: 10px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box; /* Menyertakan padding dalam perhitungan lebar */
+	font-size: 22px;
+  }
+  
+  #alertText {
+	display: block;
+	min-height: 24px;
+	margin-top: 8px;
+	font-size: 14px;
+  }
+  
+  .text-info {
+	color: #06c;
+  }
+  
+  .text-danger {
+	color: #c00;
+  }
+  
+  .text-success {
+	color: rgb(0, 204, 0);
+  }
+  
+  .button-group {
+	margin-top: 24px;
+  }
+  
+  .button-group button {
+	display: inline-block;
+	margin-bottom: 16px;
+	padding: 12px 24px;
+	font-size: 14px;
+	border: none;
+	border-radius: 4px;
+	color: #333;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .button-group button:first-child {
+	background-color: #f6bf42;
+	padding: 12px 40px;
+  }
+  
+  .button-group button:not(:last-child) {
+	margin-right: 10px;
+  }
+  
+  .button-group button:hover {
+	background-color: #f0a500;
+  }
+  
+  .button-group button:active {
+	background-color: #e09200;
+	animation: buttonClick 0.2s ease-in-out;
+	transform: scale(0.9);
+  }
+  
+  /* aside */
+  
+  aside {
+	flex: 1;
+	margin-left: 20px;
+  }
+  
+  #infoSection {
+	background-color: #f8f8f8;
+	padding: 42px 36px 36px;
+	border-radius: 12px;
+  }
+  
+  #infoSection h2 {
+	margin-top: 0;
+	font-size: 24px;
+	color: #333;
+  }
+  
+  #formulaSection {
+	margin-bottom: 36px;
+  }
+  
+  #formulaOutput {
+	width: 100%;
+	height: 52px;
+	padding: 12px;
+	font-size: 20px;
+	color: #c00;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: none;
+	box-sizing: border-box; /* Menyertakan padding dalam perhitungan lebar */
+  }
+  
+  #explainDescription {
+	margin-top: 0;
+	color: #333;
+  }
+  
+  /* footer */
+  
+  footer {
+	background-color: #f8f8f8;
+	padding: 10px 20px;
+	text-align: center;
+	color: #666;
+	font-size: 14px;
+  }
+  
+  footer .inner {
+	justify-content: space-between;
+	align-items: flex-end;
+  }
+  
+  footer .inner p {
+	padding: 0 20px;
+  }
+  
+  /* Animasi */
+  
+  @keyframes entrance {
+	0% {
+	  opacity: 0;
+	  transform: translateY(-20px);
+	}
+	100% {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  
+  @keyframes buttonClick {
+	0% {
+	  transform: scale(1);
+	}
+	50% {
+	  transform: scale(0.9);
+	}
+	100% {
+	  transform: scale(1);
+	}
+  }
+  
+  /* Responsif */
+  
+  @media only screen and (max-width: 600px) {
+	/* header */
+	#site-title h1 {
+	  font-size: 24px;
+	}
+	.container,
+	.inner {
+	  flex-direction: column;
+	}
+	.callout .calloutDesc,
+	.callout .calloutInfo {
+	  width: auto;
+	  padding: 24px;
+	}
+	.callout .calloutDesc {
+	  margin-right: 0;
+	  margin-bottom: 0;
+	  padding-bottom: 0;
+	}
+	main {
+	  margin-right: 0;
+	}
+	.button-group button {
+	  display: block;
+	  width: 100%;
+	  padding: 16px 30px;
+	  font-size: 16px;
+	}
+	.button-group button:first-child {
+	  padding: 24px 20px;
+	}
+	aside {
+	  margin-left: 0;
+	  margin-top: 20px;
+	}
+  
+	footer .inner {
+	  align-items: center;
+	}
+  }
+  
